@@ -1,0 +1,23 @@
+name: DNF Activity
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: 11
+
+      - name: Build and run
+        run: |
+          ./mvnw clean package
+          java -jar target/my-project.jar
