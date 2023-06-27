@@ -12,7 +12,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
  * @date 2023/6/27 17:44
  */
 
-
 public class DNFActivityHelper {
     private WebDriver driver;
 
