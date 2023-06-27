@@ -20,4 +20,4 @@ jobs:
       - name: Build and run
         run: |
           ./mvnw clean package
-          java -jar target/my-project.jar
+          java -jar target/dnf-helper-1.0-SNAPSHOT.jar
