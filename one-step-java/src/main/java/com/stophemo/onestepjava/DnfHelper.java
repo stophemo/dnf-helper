@@ -1,4 +1,4 @@
-package top.stophemo.entity;
+package top.stophemo;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,16 +6,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 /**
- * description
+ * dnf-helper
  *
  * @author 霍杰
  * @date 2023/6/27 17:44
  */
 
-public class DNFActivityHelper {
+public class DnfHelper {
     private WebDriver driver;
 
-    public DNFActivityHelper() {
+    public DnfHelper() {
         // 设置 ChromeDriver 的路径
         System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
 
@@ -25,7 +25,7 @@ public class DNFActivityHelper {
 
     public void login(String username, String password) {
         // 导航到登录页面
-        driver.get("https://dnf.game.com/login");
+        driver.get("https://mail.qq.com/");
 
         // 输入用户名和密码
         WebElement usernameInput = driver.findElement(By.id("username"));
