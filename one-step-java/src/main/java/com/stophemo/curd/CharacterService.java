@@ -1,4 +1,4 @@
-package com.stophemo.onestepjava.curd;
+package com.stophemo.curd;
 
 public interface CharacterService {
 }

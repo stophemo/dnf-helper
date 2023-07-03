@@ -1,4 +1,4 @@
-package com.stophemo.onestepjava.driver;
+package com.stophemo.driver;
 
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;

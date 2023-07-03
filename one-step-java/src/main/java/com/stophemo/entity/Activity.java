@@ -1,4 +1,4 @@
-package com.stophemo.onestepjava.entity;
+package com.stophemo.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
