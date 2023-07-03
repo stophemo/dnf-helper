@@ -15,5 +15,7 @@
 one-step-java/.gradle/
 one-step-js/node_modules/
 
+*/build/
+
 
 
