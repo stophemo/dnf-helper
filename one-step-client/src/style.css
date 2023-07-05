@@ -9,19 +9,19 @@
 }
 
 .top {
-    flex-basis: 20%;
+    height: 20%;
     display: flex;
     justify-content: space-between;
 }
 
 .center {
-    flex-basis: 50%;
+    height: 50%;
     display: flex;
     justify-content: space-between;
 }
 
 .bottom {
-    flex-basis: 30%;
+    height: 30%;
 }
 
 /* top细节布局 */
@@ -52,5 +52,4 @@
 /* bottom细节布局 */
 .logs {
     border: 1px solid #000;
-    margin: 1% 0;
 }
