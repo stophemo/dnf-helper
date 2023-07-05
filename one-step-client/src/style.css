@@ -36,9 +36,11 @@
 .activities {
     width: 40%;
     height: 100%;
+    border: 1px solid #000;
 }
 
 .results {
     width: 60%;
     height: 100%;
+    border: 1px solid #000;
 }
