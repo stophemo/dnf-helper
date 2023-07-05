@@ -1,20 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <title>Hello World!</title>
     <meta
-            http-equiv="Content-Security-Policy"
-            content="default-src 'self'; script-src 'self'"
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
     />
-    <meta
-            http-equiv="X-Content-Security-Policy"
-            content="default-src 'self'; script-src 'self'"
-    />
-    <title>Hello from Electron renderer!</title>
-</head>
-<body>
-<h1>Hello from Electron renderer!</h1>
-<p>👋</p>
-</body>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="top">
+        <div class="selectCharactor">
+          <select class="charSelector">
+            <option value="" disabled selected hidden>Prov</option>
+            <option value="apple">Apple</option>
+            <option value="banana">Banana</option>
+            <option value="orange">Orange</option>
+          </select>
+          <select class="charSelector">
+            <option value="" disabled selected hidden>Prov Num</option>
+            <option value="banana">Banana</option>
+            <option value="orange">Orange</option>
+          </select>
+          <select class="charSelector">
+            <option value="" disabled selected hidden>Role</option>
+            <option value="banana">Banana</option>
+            <option value="orange">Orange</option>
+          </select>
+        </div>
+        <button class="runBtn">one step! run!</button>
+      </div>
+      <div class="center">
+        <div class="acvtivities"></div>
+        <div class="results"></div>
+      </div>
+      <div class="bottom">
+        <div class="logs"></div>
+      </div>
+    </div>
+  </body>
 </html>
