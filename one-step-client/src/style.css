@@ -33,14 +33,24 @@
     height: 100%;
 }
 
+
+/* center细节布局 */
 .activities {
-    width: 40%;
+    flex-basis: 40%;
     height: 100%;
     border: 1px solid #000;
+    margin: 1% 1% 1% 0;
 }
 
 .results {
-    width: 60%;
+    flex-basis: 60%;
     height: 100%;
     border: 1px solid #000;
+    margin: 1% 0;
+}
+
+/* bottom细节布局 */
+.logs {
+    border: 1px solid #000;
+    margin: 1% 0;
 }
