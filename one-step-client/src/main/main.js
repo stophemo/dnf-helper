@@ -1,39 +1,45 @@
-const { app, BrowserWindow, Menu,ipcMain, nativeTheme, shell} = require('electron')
+const { app, BrowserWindow, Menu,ipcMain, ipcRenderer, shell} = require('electron')
 const path = require('path')
 
-function createMainWindow () {
-    const win = new BrowserWindow({
-        width: 800,
-        height: 600,
-        webPreferences: {
-            preload: path.join(__dirname, 'preload.js')
-        }
-    })
-
-    win.loadFile('./src/pages/index.html')
-}
-
+let loginWindow
+let mainWindow
 function createLoginWindow () {
-    const loginWindow = new BrowserWindow({
+    loginWindow = new BrowserWindow({
         width: 400,
         height: 600,
         webPreferences: {
-            nodeIntegration: true
+            preload: path.join(__dirname, '../preload/preload.js')
         }
     })
-
-    loginWindow.loadFile('./src/pages/login.html')
-
-    // 监听 login-successful 事件，并在接收到该事件时创建主窗口
-    ipcMain.on('login-successful', () => {
-        if (BrowserWindow.getAllWindows().length === 0) {
-            createMainWindow()
+    loginWindow.loadFile('./src/renderer/src/components/login.html')
+}
+function createMainWindow () {
+    mainWindow = new BrowserWindow({
+        width: 800,
+        height: 600,
+        webPreferences: {
+            preload: path.join(__dirname, '../preload/preload.js')
         }
     })
+    mainWindow.loadFile('src/renderer/index.html')
 }
 
+app.on('ready', () => {
+    ipcMain.on('login-successful', () => {
+        // 关闭登录窗口
+        loginWindow.close()
+        // 创建主窗口
+        createMainWindow()
+    })
 
+    createLoginWindow()
+})
 
+app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') {
+        app.quit()
+    }
+})
 
 const template = [
     {
@@ -91,7 +97,7 @@ const template = [
         ]
     },
     {
-        role: '&help',
+        role: 'help',
         submenu: [
             {
                 label: 'Learn More',
@@ -105,19 +111,3 @@ const template = [
 ]
 const menu = Menu.buildFromTemplate(template)
 Menu.setApplicationMenu(menu)
-
-app.whenReady().then(() => {
-    createLoginWindow()
-
-    ipcMain.on('login-successful', () => {
-        if (BrowserWindow.getAllWindows().length === 0) {
-            createMainWindow()
-        }
-    })
-})
-
-app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
-        app.quit()
-    }
-})

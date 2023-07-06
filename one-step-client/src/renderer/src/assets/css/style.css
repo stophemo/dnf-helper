@@ -1,13 +1,13 @@
 /* 整体布局 */
 #app {
-    height: 600px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     padding: 2%;
 }
 
 .top {
-    flex-shrink: 1;
+    flex: 1;
     display: flex;
     justify-content: space-between;
 }

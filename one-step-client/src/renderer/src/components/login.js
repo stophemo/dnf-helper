@@ -1,19 +1,15 @@
-const { ipcRenderer } = require('electron')
-
-const form = document.querySelector('form')
-
-form.addEventListener('submit', (event) => {
+const loginForm = document.getElementById('loginForm')
+loginForm.addEventListener('submit', (event) => {
     event.preventDefault()
 
-    const username = document.getElementById('username').value
-    const password = document.getElementById('password').value
+    const username = loginForm.elements.username.value
+    const password = loginForm.elements.password.value
 
-    // TODO: 根据用户名和密码验证用户
-    if (username === password) {
-        ipcRenderer.send('login-successful')
-    }
+    // TODO: 在这里进行登录验证
+    const loginResult = 'success'
+    // 登录成功后，向主进程发送消息
+    window.versions.loginSuccess(loginResult)
 })
 
-ipcRenderer.on('show-main-window', () => {
-    window.close()
-})
+const information = document.getElementById('info')
+information.innerText = `本应用正在使用 Chrome (v${versions.chrome()}), Node.js (v${versions.node()}), 和 Electron (v${versions.electron()})`
