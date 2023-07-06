@@ -1,0 +1,28 @@
+#login {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.formItem {
+  display: block;
+  width: 61.8%;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+}
+
+.or {
+  margin: 1rem 0;
+  padding: 0 auto;
+  text-align: center;
+}
+
+.qrcode {
+  padding: 0 19.1%;
+}

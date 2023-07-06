@@ -1,7 +1,7 @@
-const { app, BrowserWindow, Menu,ipcMain, nativeTheme } = require('electron')
+const { app, BrowserWindow, Menu,ipcMain, nativeTheme, shell} = require('electron')
 const path = require('path')
 
-function createWindow () {
+function createMainWindow () {
     const win = new BrowserWindow({
         width: 800,
         height: 600,
@@ -10,8 +10,30 @@ function createWindow () {
         }
     })
 
-    win.loadFile('./src/index.html')
+    win.loadFile('./src/pages/index.html')
 }
+
+function createLoginWindow () {
+    const loginWindow = new BrowserWindow({
+        width: 400,
+        height: 600,
+        webPreferences: {
+            nodeIntegration: true
+        }
+    })
+
+    loginWindow.loadFile('./src/pages/login.html')
+
+    // 监听 login-successful 事件，并在接收到该事件时创建主窗口
+    ipcMain.on('login-successful', () => {
+        if (BrowserWindow.getAllWindows().length === 0) {
+            createMainWindow()
+        }
+    })
+}
+
+
+
 
 const template = [
     {
@@ -81,16 +103,15 @@ const template = [
         ]
     }
 ]
-
 const menu = Menu.buildFromTemplate(template)
 Menu.setApplicationMenu(menu)
 
 app.whenReady().then(() => {
-    createWindow()
+    createLoginWindow()
 
-    app.on('activate', () => {
+    ipcMain.on('login-successful', () => {
         if (BrowserWindow.getAllWindows().length === 0) {
-            createWindow()
+            createMainWindow()
         }
     })
 })
