@@ -20,7 +20,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/main.fxml"));
-        primaryStage.setTitle("DNF活动助手 " + Constant.VERSION);
+        primaryStage.setTitle("onestep " + Constant.VERSION);
         Scene scene = new Scene(root, 900, 500);
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);

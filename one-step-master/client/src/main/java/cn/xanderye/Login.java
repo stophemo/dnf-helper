@@ -22,7 +22,7 @@ public class Login extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/login.fxml"));
-        primaryStage.setTitle(" " + Constant.VERSION);
+        primaryStage.setTitle("onestep " + Constant.VERSION);
         Scene scene = new Scene(root, 300, 400);
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
