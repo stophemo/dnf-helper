@@ -1,0 +1,62 @@
+/* 整体布局 */
+#app {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+
+.top {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.center {
+    height: 61.8%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1%;
+}
+
+.bottom {
+    height: 20%;
+    margin-top: 1%;
+    border: 1px solid #000;
+}
+
+/* top细节布局 */
+.selectCharactor {
+    padding: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.charSelector {
+    height: 2rem;
+    margin-right: 1rem;
+}
+.runBtn {
+    height: 2rem;
+    margin: auto 0;
+}
+
+/* center细节布局 */
+.activities {
+    flex-basis: 38.2%;
+    border: 1px solid #000;
+    margin-right: 1%;
+    padding: .5rem 1rem;
+}
+
+.results {
+    flex-basis: 61.8%;
+    border: 1px solid #000;
+    padding: .5rem 1rem;
+}
+
+/* bottom细节布局 */
+.logs {
+    padding: .5rem 1rem;
+}

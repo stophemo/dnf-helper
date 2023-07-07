@@ -15,5 +15,9 @@
 one-step-java/.gradle/
 one-step-js/node_modules/
 
+*/build/
 
 
+
+/electron-vite-boilerplate/
+/one-step-java/out/

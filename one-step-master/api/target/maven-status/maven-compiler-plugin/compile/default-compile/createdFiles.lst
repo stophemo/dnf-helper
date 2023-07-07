@@ -1,0 +1,17 @@
+cn\xanderye\controller\InfoController.class
+cn\xanderye\filter\CorsFilter.class
+cn\xanderye\schedule\ExpirationCheckSchedule.class
+cn\xanderye\mapper\ActivityMapper.class
+cn\xanderye\interceptor\AuthInterceptor.class
+cn\xanderye\base\ResultBean.class
+cn\xanderye\controller\UpdateController.class
+cn\xanderye\util\RequestUtil.class
+cn\xanderye\config\WebConfig.class
+cn\xanderye\controller\LicenseController.class
+cn\xanderye\exception\GlobalExceptionHandler.class
+cn\xanderye\mapper\LogMapper.class
+cn\xanderye\mapper\AnnouncementMapper.class
+cn\xanderye\exception\BusinessException.class
+cn\xanderye\Application.class
+cn\xanderye\mapper\PayloadMapper.class
+cn\xanderye\mapper\VersionMapper.class
