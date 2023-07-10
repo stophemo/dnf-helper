@@ -1,7 +1,6 @@
 package com.stophemo.onestepjava;
 
-import com.stophemo.api.LoginApis;
-import org.junit.jupiter.api.Test;
+import com.stophemo.api.LoginController;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.imageio.ImageIO;
@@ -15,8 +14,8 @@ import java.util.UUID;
 class testQrcode {
 
 	public static void main(String[] args) {
-		LoginApis loginApis = new LoginApis();
-		InputStream qrCode = loginApis.getQrCode();
+		LoginController loginController = new LoginController();
+		InputStream qrCode = loginController.getQrCode();
 		// 将byte数组转换为BufferedImage对象
 		BufferedImage qrCodeImage = null;
 		try {

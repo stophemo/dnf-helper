@@ -14,11 +14,15 @@ public class Activity {
 
     private String url;
 
-    private Boolean expired;
+    // 日，短期，长期
+    private String type;
 
-    private List<Payload> payloadList;
+//    private List<String> obtainedProps;
 
-    private Boolean auto;
+    // 开始时间 结束时间 是否过期
+    private Date startTime;
 
-    private Date expirationTime;
+    private Date endTime;
+
+    private Boolean isExpired;
 }

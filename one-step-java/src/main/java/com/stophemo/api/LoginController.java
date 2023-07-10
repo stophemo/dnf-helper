@@ -6,7 +6,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Map;
 
-public class LoginApis {
+public class LoginController {
     /**
      * 应用ID
      */

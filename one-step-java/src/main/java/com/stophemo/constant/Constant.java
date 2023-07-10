@@ -1,5 +1,7 @@
 package com.stophemo.constant;
 
+import cn.hutool.json.JSONArray;
+
 import java.math.BigDecimal;
 
 public class Constant {
@@ -62,4 +64,5 @@ public class Constant {
     public final static String DEVICE_ID = "${deviceId}";
     public final static String DEVICE_MODEL = "${deviceModel}";
     public final static String DJC_SIGN = "${djcSign}";
+
 }
